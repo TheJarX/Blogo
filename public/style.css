@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #111;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+header {
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: .05fr 0.25fr .37fr .38fr .05fr;
+    grid-template-areas: " . logo  . nav .";
+    align-items: center;
+    height: 50px;
+    border-bottom: 2px #428df5 solid;
+}
+
+.nav__brand {
+    grid-area: logo;
+    font-family: 'Bowlby One SC';
+    margin: 1vh;
+}
+
+.nav__items {
+    grid-area: nav;
+    list-style: none;
+    display: flex;
+}
+
+.nav__item{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.nav__item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nav__item:hover {
+    background: #428df5;
+}
+.nav__item:hover a{
+    color: #fff !important;
+}
+
+.nav__link {
+text-decoration: none;
+    color: #111;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 0.01fr 1fr 0.01fr;
+    grid-auto-rows: 200px;
+    grid-template-areas: ". content .";
+}
+
+#post {
+    margin: 5vh 0;
+    grid-area: content;
+    display: flex;
+    flex-flow: column;
+}
+
+#post .post__title {
+    font-size: 30pt;
+}
+
+.post__subtitle {
+    margin: 3vh 0;
+    font-size: 15pt;
+
+}
+.post__cover {
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 3vh 0;
+}
+
+.post__cover img {
+    max-width: 100%;
+}
+
+.post__content p {
+    line-height: 150%;
+    margin-bottom: 5vh;
+}
+
+.nodata-msg {
+    grid-area: content;
+    display: flex;
+    height: 100%;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#posts-list {
+    grid-area: content;
+    margin-top: 2vh;
+}
+
+
+.post {
+    user-select: none;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .1);
+    padding: 2vh;
+    margin: 4vh;
+    border-radius: 5px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:    "title"
+                            "content"
+                            "."
+                            "link";
+    transition: 150ms;
+
+}
+
+.post:hover {
+    transition: 150ms;
+    box-shadow: 0px 1px 19px 1px rgba(0, 0, 0, .1);
+
+}
+
+.post__title {
+    grid-area: title;
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+.post__author {
+    font-size: 11pt;
+    color: #777;
+    font-weight: normal;
+}
+
+.post__preview {
+    grid-area: content;
+    color: #777;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post a {
+    grid-area: link;
+}
+
+.form {
+    grid-area: content;
+    margin-top: 5vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.form__group {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+
+.form__group input {
+    height: 5vh;
+}
+
+.form__group textarea {
+    min-height: 150px;
+    min-width: 300px;
+}
+
+.form__group input, textarea {
+    outline: none;
+    border: 1px rgba(0, 0, 0, 0.2) solid;
+    padding: 2vh;
+    border-radius: 5px;
+    justify-content: space-around;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+.form__group button {
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 2vh;
+    color: #fff;
+    background: #428df5;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5) ;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.form__group button:hover {
+    background: rgba(66, 141, 245, 0.84);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .5) ;
+}
+
+.form__group button:active {
+    background: rgb(63, 142, 250);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5) ;
+}
+
+@media (min-width: 700px) {
+    .nav {
+        display: grid;
+        grid-template-columns: .10fr 0.2fr .2fr .2fr .2fr .2fr .10fr;
+        grid-template-areas: ". logo . .  . nav . ";
+        align-items: center;
+        height: 50px;
+        border-bottom: 2px #428df5 solid;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 0.2fr 1fr 0.2fr;
+        grid-auto-rows: 200px;
+        grid-template-areas: ". content .";
+    }
+}

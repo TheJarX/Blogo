@@ -1,0 +1,18 @@
+<div id="post">
+  <div class="post__title"><%=post.title %></div>
+  <div class="post__header">
+  <div class="post__info">
+    <span class="post__author"><%=post.author %></span> -
+    <span class="post__date"><%=post.human_time %></span>
+  </div>
+  <% unless post.subtitle.nil? || post.subtitle.empty? %>
+    <div class="post__subtitle"><%=post.subtitle %></div>
+  <% end %>
+  <div class="post__cover">
+    <img src="<%=post.image %>" alt="<%=post.title.split(" ").join("-") %>-image">
+  </div>
+  </div>
+  <div class="post__content">
+    <p><%=post.body %></p>
+  </div>
+</div>

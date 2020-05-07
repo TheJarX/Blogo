@@ -1,0 +1,11 @@
+<div id="posts-list">
+  <% if  @posts.empty? %>
+    <div class="nodata-msg">
+      <h1>No data :(</h1>
+      <p>Create a post <a href="/blog/new">now!</a></p>
+    </div>
+  <% end %>
+  <%@posts.each do |post| %>
+      <%= erb "_post".to_sym, locals: {title: post.title, body: post.body, author: post.author, id: post.id}%>
+  <% end %>
+</div>
